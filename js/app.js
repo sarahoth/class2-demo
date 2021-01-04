@@ -16,7 +16,7 @@ function questionOne() {
   } else {
     alert(userName+ '! This was a yes or no question. How did you mess that up?');
   }
-  console.log('Does the user think that I have any siblings: ' , anySiblings);
+  //console.log('Does the user think that I have any siblings: ' , anySiblings);
 }
 
 function questionTwo() {
@@ -30,7 +30,7 @@ function questionTwo() {
   } else {
     alert('What?? Yes or no only, please, ' + userName + '!');
   }
-  console.log('Does the user think I have any pets: ' , anyPets);
+  //console.log('Does the user think I have any pets: ' , anyPets);
 }
 
 function questionThree() {
@@ -43,7 +43,7 @@ function questionThree() {
   } else {
     alert('Hmm, ' + userName + '. I think the answer you were looking for was, yes.');
   }
-  console.log('Does the User think that I am originally from jordan: ' , livein );
+  //console.log('Does the User think that I am originally from jordan: ' , livein );
 }
 
 function questionFour() {
@@ -56,7 +56,7 @@ function questionFour() {
   } else {
     alert(userName + '?????');
   }
-  console.log('Does the user think I have been traveled: ' , beentravel);
+  //console.log('Does the user think I have been traveled: ' , beentravel);
 }
 
 function questionFive() {
@@ -70,7 +70,7 @@ function questionFive() {
     alert('Ehhhh, no,' + userName + '.');
   }
 
-  console.log('Does the user think that I play the footbal: ' , playfootbal);
+  //console.log('Does the user think that I play the footbal: ' , playfootbal);
 }
 
 
