@@ -74,13 +74,104 @@ function questionFive() {
 }
 
 
-    
+
+
+
+var correctNumbersisters = 14;
+var totalGuessAttemptssisters = 0;
+var maxGuessAttemptsisters = 4;
+
+
+
+var userin ;
+var count = 0;
+function try1(){
+  for(var i = 4; i>0;i--){
+    userin = prompt('How many sisters do I have? you have : '+ i);
+    userin = Number(userin);
+    while(!(Number.isInteger(userin)) || userin == ""){
+      userin = prompt('How many sisters do I have? you have : '+ i);
+      userin = Number(userin);
+    }
+    if (userin == correctNumbersisters){
+      count++;
+      correctAnswers++;
+
+      alert("OMG ITS RIGHT YOUR ARE COOOOOL");
+      break;
+    }else if (userin < correctNumbersisters){
+      alert("too low");
+    }else{
+      alert("too high");
+    }
+
+  }
+}
+
+try1();
+
+
+
+
+
+
+var correct = false;
+
+var totalGuessAttemptsSingers = 0;
+var likeSingers = [
+  
+  'SARAH',
+  'Ed Sheeran',
+  'Julia Michaels',
+  'Drake'
+];
+// length = 7
+//index 0-6
+var maxGuessAttemptSingers = 6;
+var userInputSingers ;
+function askSingers () {
+  for (var i = 0; i < maxGuessAttemptSingers; i++) {
+    userInputSingers = prompt('Which singers do I like?');
+    for (var j = 0; j < likeSingers.length; j++) {
+      if (likeSingers[j].toLowerCase() === userInputSingers.toLowerCase()) {
+        console.log(userName+ ' typed one of the singers I like');
+        alert('Yipee! You\'re correct. My favorites are : ' + likeSingers.toString());
+        correct = true;
+        totalGuessAttemptsSingers++;
+        correctAnswers++;
+        break;
+      }
+    }
+    if (correct){
+      correctAnswers++;
+
+      break;
+    }
+    if(maxGuessAttemptSingers === i + 1) {
+      console.log(userName+' ran out of attempts for singers question');
+      alert('Sorry, you ran out of attempts. My favorites are : ' + likeSingers.toString());
+      correct = true;
+    }
+    else {userInputSingers = prompt('It\'s not correct. Try again!');
+    }
+  }
+}
+
+
+//console.log(usersName + 'got ' + countTotalCorrect + ' correct');
 
     
-questionOne();
+askSingers();
+console.log(correctAnswers)
+alert('You got ' + correctAnswers + ' correct!!');
+
+
+ questionOne();
 questionTwo();
 questionThree();
 questionFour();
 questionFive();
-alert(' thanx ' + userName + ' you can now see some information about me');
+/*askSingers();
+asksisters();
+alert(' thanx ' + userName + ' you can now see some information about me'); */
      

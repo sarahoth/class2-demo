@@ -7,3 +7,10 @@ p{
 body{
     background-color: rgb(221, 155, 188);
 }
+
+ ul , ol {
+    color: #7302CA;
+    margin-left: 6em;
+    margin-right: 6em;
+  
+}
