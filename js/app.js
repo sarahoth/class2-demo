@@ -1,118 +1,86 @@
 'use strict';
 
+var mark = 0;
+var questions = ['Do I have any siblings? Y/N ','Do i have any pets?', 'Do you think I am live in  jordan?' ,'Do you think I traveled befor??','Do you think that I play football?'];
+var correctAnswers =['y','y','y','y','y'];
+var userAnswers = new Array();
+var msgs=new Array();
+
+function validationName(uinput,msg){
+  while(uinput === '' || uinput === null || uinput === undefined){
+      uinput = prompt(msg);
+  }
+  return uinput;      
+}
+
+
+
 alert('Hi! Welcome to my page. I have a few questions for you to see how well you know me!');
-var correctAnswers = 0;
-var userName = prompt('First, what is your name?');
+var userName = validationName(userName,'First, what is your name?')
 alert('Great to see you, ' + userName + '! Let\'s get started!');
 
-function questionOne() {
-  var anySiblings = prompt('Do I have any siblings? ').toLowerCase();
 
-  if(anySiblings === 'y' || anySiblings === 'yes') {
-    alert('You guessed it, ' + userName + '! I\'m the youngest of four kids!');
-    correctAnswers++;
-  } else if(anySiblings === 'n' || anySiblings === 'no') {
-    alert('You got it all wrong, ' + userName +'!');
-  } else {
-    alert(userName+ '! This was a yes or no question. How did you mess that up?');
+function validation(uinput, msg) {
+  while (uinput === '' || uinput === null || uinput === undefined || !(uinput.toLowerCase() === 'y' || uinput.toLowerCase() === 'n')) {
+      uinput = prompt(msg);
+      if (!(uinput.toLowerCase() === 'y' || uinput.toLowerCase() === 'n' )) {
+          alert("you can input Y / N or yes/no only ");
+      }
   }
-  //console.log('Does the user think that I have any siblings: ' , anySiblings);
-}
-
-function questionTwo() {
-  var anyPets = prompt('Do i have any pets?').toLowerCase();
-
-  if(anyPets === 'y' || anyPets === 'yes') {
-    alert('Correct, ' + userName + '! I have a cate named samra.');
-    correctAnswers++;
-  } else if(anyPets === 'n' || anyPets === 'no') {
-    alert('Wrong, ' + userName + '! I have a cate named samra.');
-  } else {
-    alert('What?? Yes or no only, please, ' + userName + '!');
-  }
-  //console.log('Does the user think I have any pets: ' , anyPets);
-}
-
-function questionThree() {
-  var livein = prompt('Do you think I am live in   jordan?').toLowerCase();
-  if(livein === 'y' || livein === 'yes') {
-    alert('Yep, ' + userName + '! jordan is my County, born and raised.');
-    correctAnswers++;
-  } else if(livein === 'n' ||livein === 'no') {
-    alert('Wrong, ' + userName + '! I was born in jordan, WA!');
-  } else {
-    alert('Hmm, ' + userName + '. I think the answer you were looking for was, yes.');
-  }
-  //console.log('Does the User think that I am originally from jordan: ' , livein );
-}
-
-function questionFour() {
-  var beentravel = prompt('Do you think I traveled befor??').toLowerCase();
-  if(beentravel === 'y' || beentravel === 'yes') {
-    alert('Nope, ' + userName + '. I hope to travel!');
-  } else if(beentravel === 'n' || beentravel === 'no') {
-    alert('Correct! Stuck on a ship waiting for this mommnt');
-    correctAnswers++;
-  } else {
-    alert(userName + '?????');
-  }
-  //console.log('Does the user think I have been traveled: ' , beentravel);
-}
-
-function questionFive() {
-  var playfootbal = prompt('Do you think that I play football?').toLowerCase();
-  if(playfootbal === 'y' || playfootbal=== 'yes') {
-    alert('You bet! You can\'t win if you don\'t play,' + userName + '.');
-    correctAnswers++;
-  } else if(playfootbal === 'n' || playfootbal === 'no') {
-    alert('Wrong answer! I like to test my luck now and again,' + userName + '.');
-  } else {
-    alert('Ehhhh, no,' + userName + '.');
-  }
-
-  //console.log('Does the user think that I play the footbal: ' , playfootbal);
+  return uinput;
 }
 
 
+for(var i=0 ;i<5;i++){
 
+  userAnswers[i]=validation(userAnswers[i],questions[i]);
+  if (userAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+      mark++;
+      msgs[i] = "correct";
+      alert(" You guessed it, "+userName +" good job ! *_* ");
+  
+  }
+  else {
+      msgs[i]= "incorect";
+      alert(" incorrect , don't worry! ");
+  }
+  console.log(questions[i], userAnswers[i], " it's " + msgs[i]);
 
+}
 
-var correctNumbersisters = 14;
+var randomNumber = Math.floor(Math.random() * 100);
 var totalGuessAttemptssisters = 0;
 var maxGuessAttemptsisters = 4;
 
 
-
 var userin ;
-var count = 0;
+
 function try1(){
   for(var i = 4; i>0;i--){
-    userin = prompt('How many sisters do I have? you have : '+ i);
+    userin = prompt('enter a random number ? you have : '+ i+ "ireation ");
     userin = Number(userin);
     while(!(Number.isInteger(userin)) || userin == ""){
-      userin = prompt('How many sisters do I have? you have : '+ i);
+      userin = prompt('enter a random number? you have : '+ i);
       userin = Number(userin);
     }
-    if (userin == correctNumbersisters){
-      count++;
-      correctAnswers++;
+    if (userin == randomNumber){
+      
+      mark++;
 
       alert("OMG ITS RIGHT YOUR ARE COOOOOL");
       break;
-    }else if (userin < correctNumbersisters){
+    }else if (userin < randomNumber){
       alert("too low");
     }else{
       alert("too high");
     }
 
   }
+  alert ( " the number : " +randomNumber);
+  
 }
 
 try1();
-
-
-
-
 
 
 var correct = false;
@@ -138,12 +106,12 @@ function askSingers () {
         alert('Yipee! You\'re correct. My favorites are : ' + likeSingers.toString());
         correct = true;
         totalGuessAttemptsSingers++;
-        correctAnswers++;
+        mark++;
         break;
       }
     }
     if (correct){
-      correctAnswers++;
+      mark++;
 
       break;
     }
@@ -157,21 +125,6 @@ function askSingers () {
   }
 }
 
-
-//console.log(usersName + 'got ' + countTotalCorrect + ' correct');
-
-    
 askSingers();
-console.log(correctAnswers)
-alert('You got ' + correctAnswers + ' correct!!');
-
-
- questionOne();
-questionTwo();
-questionThree();
-questionFour();
-questionFive();
-/*askSingers();
-asksisters();
-alert(' thanx ' + userName + ' you can now see some information about me'); */
-     
+console.log(mark)
+alert('You got ' + mark + ' correct!!');
