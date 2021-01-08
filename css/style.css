@@ -1,16 +1,43 @@
 p{
     text-align: center;
+    
+    
+   
 }
 .nav-list{
     color: rgb(68, 100, 160);
 }
 body{
-    background-color: rgb(221, 155, 188);
+    background-color: rgb(231, 202, 217);
+    margin-right: auto;
+    
+    border-radius : 9px;
+
+    display: block;
+    margin: 8px;
 }
+
 
  ul , ol {
     color: #7302CA;
     margin-left: 6em;
     margin-right: 6em;
+    display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
   
 }
+
+
+
+
+
+
+
+
+
+
